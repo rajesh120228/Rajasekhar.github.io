@@ -5,41 +5,24 @@
 		<script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
 		<!--<script src="https://unpkg.com/aframe-charts-component/dist/aframe-charts-component.min.js"></script>
 		<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>-->
-    <script src="https://unpkg.com/aframe-charts-component/dist/aframe-charts-component.min.js"></script>
+    		<script src="https://unpkg.com/aframe-charts-component/dist/aframe-charts-component.min.js"></script>
 		<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    	<script src="JS/gesture-detector.js"></script>
-    	<script src="JS/gesture-handler.js"></script>
+    		<script src="JS/gesture-detector.js"></script>
+    		<script src="JS/gesture-handler.js"></script>
 	</head>
 	<body>
-		<a-scene
-      arjs
-      embedded
-      renderer="logarithmicDepthBuffer: true;"
-      vr-mode-ui="enabled: false"
-      gesture-detector
-      id="scene"
-    >
-
-      <a-marker
-        preset="hiro"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        id="markerA"
-      >
-        <a-entity
-          id="bowser-model"
-          charts="type: cylinder; dataPoints: Data/data.json; axis_nagative: false"
-          position="0 0 0"
-          rotation="300 0 0"
-          scale="0.5 0.5 0.5"
-          class="clickable"
-          gesture-handler
-        >
-        </a-entity>
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
+		<a-scene arjs embedded renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector id="scene">
+			<a-marker preset="hiro" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA">
+				<a-entity id="bowser-model"
+					  charts="type: cylinder; dataPoints: Data/bar_data.json; axis_nagative: false"
+					  position="0 0 0"
+					  rotation="300 0 0"
+					  scale="0.5 0.5 0.5"
+					  class="clickable"
+					  gesture-handler>
+				</a-entity>
+			</a-marker>
+			<a-entity camera></a-entity>
+		</a-scene>
 	</body>
-
 </html>
